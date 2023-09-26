@@ -1,0 +1,65 @@
+.strepper{
+  .question{
+    margin: 50px auto;
+    width: 70%;
+    form{
+      mat-form-field{
+        width: 90%;
+        margin-bottom: 35px;
+      }
+    }
+    .quesBtn{
+      margin-top: -20px;
+      button{
+        margin-left: 10px;
+        margin-top: 30px;
+      }
+    }
+  }
+  .examBox{
+    margin: 50px auto;
+    width: 90%;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    .examhead{
+      margin-top: -20px;
+      margin-bottom: 20px;
+      h2{
+        display: inline-block;
+        margin-top: 5px;
+        padding: 5px 88px;
+        border-radius: 30px;
+        background-color: #f44336;
+        font-size: 28px;
+        color: #fff;
+      }
+    }
+    .quesBox{
+      padding: 30px 55px;
+      border: 1px solid;
+      border-color:transparent transparent #ddd transparent;
+      span{
+        font-size: 20px;
+        p{
+          display: inline;
+          font-size: 25px;
+        }
+      }
+      .answer{
+        margin-right: 10px;
+        font-size: 18px;
+        p{
+          padding: 10px;
+        }
+        span{
+          color: #f44336;
+        }
+      }
+      .delete{
+        button{
+
+        }
+      }
+    }
+  }
+}

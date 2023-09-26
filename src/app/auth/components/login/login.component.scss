@@ -1,0 +1,40 @@
+.bodyPageLogin{
+  .login{
+    margin-top: 100px;
+    .loginContent{
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      .label{
+        padding: 10px;
+        width: 150px;
+        height: 40px;
+        border: 1px solid transparent;
+        border-radius: 40px;
+        background-color: #f44336;
+        margin: auto;
+        transform: translateY(-45px);
+        h2{
+          color: white;
+          font-size: 28px;
+          margin: 0;
+        }
+      }
+      .chose{
+
+      }
+      mat-form-field {
+        width: 100%;
+      }
+      .creatOrOregister{
+        a{
+          text-decoration: none;
+          font-size: 22px;
+        }
+        button{
+          background-color: #f44336;
+          color: white;
+        }
+      }
+    }
+  }
+}

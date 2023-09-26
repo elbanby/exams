@@ -1,0 +1,18 @@
+<div class="tablePage">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <td colspan="2">الاسم</td>
+        <td>المادة</td>
+        <td>الدرجة</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of userSubjectTable">
+        <td colspan="2">{{item.name}}</td>
+        <td>{{item.subject}}</td>
+        <td>{{item.degree}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

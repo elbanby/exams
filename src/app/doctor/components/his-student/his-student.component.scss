@@ -1,0 +1,28 @@
+.tablePage{
+  margin-top: 60px ;
+  table{
+    width: 90%;
+    text-align: center;
+    margin: auto;
+    thead{
+      background-color: #7a36f4 ;
+      color:#fff ;
+      font-size: 25px;
+      height: 40px;
+      border-radius: 5px;
+      tr{
+        td{
+          width: 30%;
+        }
+      }
+    }
+    tbody{
+      tr{
+        border: 1px solid #eeeeee54;
+        td{
+
+        }
+      }
+    }
+  }
+}

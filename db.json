@@ -1,0 +1,162 @@
+{
+  "students": [
+    {
+      "userName": "Mohamed",
+      "email": "mohamed@mohamed.com",
+      "password": "123",
+      "id": 2,
+      "subject": [
+        {
+          "name": "Math",
+          "degree": 2,
+          "id": "2"
+        }
+      ]
+    },
+    {
+      "userName": "mohamed Younes",
+      "email": "yonis@gmail.com",
+      "password": "123",
+      "id": 3,
+      "subject": [
+        {
+          "name": "phisics",
+          "degree": 1,
+          "id": "3"
+        },
+        {
+          "name": "ds",
+          "degree": 1,
+          "id": "5"
+        },
+        {
+          "name": "scinse",
+          "degree": 1,
+          "id": "2"
+        }
+      ]
+    },
+    {
+      "userName": "tawhid",
+      "email": "tawhid@gmail.com",
+      "password": "123",
+      "id": 4,
+      "subject": [
+        {
+          "name": "scinse",
+          "degree": 1,
+          "id": "2"
+        }
+      ]
+    },
+    {
+      "userName": "poe",
+      "email": "poe@poe.com",
+      "password": "123",
+      "id": 5
+    },
+    {
+      "userName": "ASHRAF",
+      "email": "ashraf@gmail.com",
+      "password": "123",
+      "id": 6,
+      "subject": [
+        {
+          "name": "ds",
+          "degree": 1,
+          "id": "5"
+        },
+        {
+          "name": "chimstry",
+          "degree": 1,
+          "id": "4"
+        }
+      ]
+    },
+    {
+      "userName": "test",
+      "email": "test@test.com",
+      "password": "123",
+      "id": 7
+    }
+  ],
+  "doctor": [
+    {
+      "userName": "admin",
+      "email": "admin@admin.com",
+      "password": "123",
+      "id": 1
+    }
+  ],
+  "subject": [
+    {
+      "name": "scinse",
+      "questions": [
+        {
+          "question": "10+10",
+          "answer1": "20",
+          "answer2": "10",
+          "answer3": "40",
+          "answer4": "30",
+          "correctAnswer": "20"
+        }
+      ],
+      "id": 2
+    },
+    {
+      "name": "phisics",
+      "questions": [
+        {
+          "question": "what  is nationality for Ahmed Zwail",
+          "answer1": "Egyption",
+          "answer2": "Britsh",
+          "answer3": "Amirican",
+          "answer4": "Australian",
+          "correctAnswer": "Egyption"
+        },
+        {
+          "question": null,
+          "answer1": null,
+          "answer2": null,
+          "answer3": null,
+          "answer4": null,
+          "correctAnswer": null
+        }
+      ],
+      "id": 3
+    },
+    {
+      "name": "chimstry",
+      "questions": [
+        {
+          "question": "what is symbole of water",
+          "answer1": "h2o",
+          "answer2": "h2s",
+          "answer3": "H2So4",
+          "answer4": "h2",
+          "correctAnswer": "h2o"
+        }
+      ],
+      "id": 4
+    },
+    {
+      "name": "ds",
+      "questions": [
+        {
+          "question": "what is ds",
+          "answer1": "its",
+          "answer2": "non",
+          "answer3": "non",
+          "answer4": "non",
+          "correctAnswer": "its"
+        }
+      ],
+      "id": 5
+    }
+  ],
+  "login": [
+    {
+      "id": 1
+    }
+  ]
+}

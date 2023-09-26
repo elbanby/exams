@@ -1,0 +1,14 @@
+<div class="bodyOfSubject">
+  <div class="row">
+    <div class="col-lg-3 col-md-4 col-sm-6" *ngFor="let subject of subjects ; let index = index" routerLink="/exam/{{subject.id}}">
+      <div class="subject" >
+        <div class="label d-flex justify-content-center align-items-center m-auto"><h2>{{subject.name}}</h2></div>
+        <div class="buttons">
+          <button *ngIf="user?.role == 'doctor'" mat-raised-button color="warn" (click)="delete(index)" >حذف</button>
+          <button *ngIf="user?.role == 'doctor'" mat-raised-button color="accent" >عرض</button>
+          <button *ngIf="user?.role !== 'doctor'" mat-raised-button color="primary" >عرض الاختبار</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

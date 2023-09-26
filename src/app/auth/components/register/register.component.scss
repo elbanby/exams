@@ -1,0 +1,47 @@
+.bodyPageRegister{
+  .Register{
+    // width: 60%;
+    margin: 100px auto;
+    .labelRegister{
+      padding: 10px;
+      width: 150px;
+      height: 40px;
+      border: 1px solid transparent;
+      border-radius: 40px;
+      background-color: #f44336;
+      margin: auto;
+      transform: translateY(-45px);
+      h2{
+        color: white;
+        font-size: 28px;
+        margin: 0;
+      }
+    }
+    .RegisterContent{
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      mat-form-field {
+        width: 100%;
+    }
+      .chose{
+
+      }
+      .fildesInputs{
+
+      }
+      .creatOrOregister{
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        a{
+          text-decoration: none;
+          font-size: 16px;
+        }
+        button{
+          background-color: #f44336;
+          color: white;
+        }
+      }
+    }
+  }
+}

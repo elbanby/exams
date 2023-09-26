@@ -1,0 +1,89 @@
+<div class="newExam ">
+  <mat-stepper linear #stepper class="strepper mt-5" [selectedIndex]="stepIndex">
+    <mat-step label="اسم المادة" [completed]="oneStep">
+      <form action="">
+        <p class="mb-0">اسم المادة :</p>
+        <mat-form-field appearance="fill">
+          <mat-label>اسم المادة</mat-label>
+          <input matInput type="text" [formControl]="name">
+        </mat-form-field>
+        <button class="me-3" mat-raised-button matStepperNext color="warn" type="button" (click)="start()">ابدأ</button>
+      </form>
+    </mat-step>
+    <mat-step label="اسئلة {{nameSubject}}" [completed]="twoStep">
+      <div class="question">
+        <form action="" [formGroup]="questionForm">
+          <div class="col-md-12 col-sm-12">
+            <mat-form-field appearance="outline" color="warn" class="w-100 mb-3 mt-3">
+              <mat-label> السؤال</mat-label>
+              <input matInput type="text" formControlName="question">
+            </mat-form-field>
+          </div>
+          <div class="row">
+            <div class="col-md-6 col-sm-12">
+              <mat-radio-button value="answer1" color="warn" (change)="correctAnswer($event)"></mat-radio-button>
+              <mat-form-field color="warn">
+                <mat-label>أجابة A</mat-label>
+                <input matInput type="text" formControlName="answer1">
+              </mat-form-field>
+            </div>
+            <div class="col-md-6 col-sm-12">
+              <mat-radio-button value="answer2" color="warn" (change)="correctAnswer($event)"></mat-radio-button>
+              <mat-form-field color="warn">
+                <mat-label>أجابة B</mat-label>
+                <input matInput type="text" formControlName="answer2">
+              </mat-form-field>
+            </div>
+            <div class="col-md-6 col-sm-12">
+              <mat-radio-button value="answer3" color="warn" (change)="correctAnswer($event)"></mat-radio-button>
+              <mat-form-field color="warn">
+                <mat-label>أجابة C</mat-label>
+                <input matInput type="text" formControlName="answer3">
+              </mat-form-field>
+            </div>
+            <div class="col-md-6 col-sm-12">
+              <mat-radio-button value="answer4" color="warn" (change)="correctAnswer($event)"></mat-radio-button>
+              <mat-form-field color="warn">
+                <mat-label>أجابة D</mat-label>
+                <input matInput type="text" formControlName="answer4">
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="quesBtn d-flex justify-content-between">
+            <div>
+              <button mat-raised-button class="btn btn-success" (click)="end()" matStepperNext
+                disabled="{{question.length ? false : true }}"> {{twoStep ? 'عرض' : 'انتهاء'}}</button>
+              <button mat-raised-button color="warn" (click)="cancel()" matStepperPrevious>الغاء</button>
+            </div>
+            <div>
+              <button mat-raised-button color="accent" (click)="clearForm()">حذف </button>
+              <button mat-raised-button color="primary" (click)="save()">حفظ</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </mat-step>
+    <mat-step label="عرض الاختبار">
+      <div class="examBox">
+        <div class="examhead text-center">
+          <h2>اختبار</h2>
+        </div>
+        <div class="quesBox" *ngFor="let item of question;let index = index">
+          <strong><span class="text-danger">سؤال </span>
+            <p> {{item.question}}</p>
+          </strong>
+          <div class="answer">
+            <p><span>A.</span> {{item.answer1}} </p>
+            <p><span>B.</span> {{item.answer2}} </p>
+            <p><span>C</span> {{item.answer3}}</p>
+            <p><span>C.</span> {{item.answer4}} </p>
+            <P>الاجابة الصحيحة. {{item.correctAnswer}}</P>
+          </div>
+          <div class="delete d-flex justify-content-center align-items-center justify-content-md-end">
+            <button mat-raised-button color="warn" (click)="delete(index)">حذف</button>
+          </div>
+        </div>
+      </div>
+    </mat-step>
+  </mat-stepper>
+</div>
