@@ -8,7 +8,7 @@
         <li *ngIf="user?.role == 'doctor'" class="" routerLinkActive="active"><a routerLink="/newExam">أختبار جديد </a></li>
         <li *ngIf="user?.role == 'doctor'" routerLinkActive="active"><a routerLink="/student">الطلاب</a></li>
         <li *ngIf="user !== null" routerLinkActive="active"><a routerLink="/subject">المواد</a></li>
-        <li *ngIf="user !== null" routerLinkActive="active"><a routerLink="/login" (click)="logOut()">خروج</a></li>
+        <li *ngIf="user !== null" routerLinkActive="active"><a (click)="logOut()">خروج</a></li>
         <!-- <li *ngIf="user == null" routerLinkActive="active"><a routerLink="/login">دخول</a></li> -->
         <!-- <li *ngIf="user == null" routerLinkActive="active"><a routerLink="/register">تسجيل</a></li> -->
         <li *ngIf="user !== null"><a >{{user?.userName}}</a></li>
@@ -57,7 +57,7 @@
           <a class="nav-link active" aria-current="page" routerLink="/subject">المواد</a>
         </li>
         <li class="nav-item" *ngIf="user !== null" routerLinkActive="active" >
-          <a class="nav-link" routerLink="/login" (click)="logOut()">خروج</a>
+          <a class="nav-link" (click)="logOut()">خروج</a>
         </li>
         <!-- <li class="nav-item"  *ngIf="user == null" routerLinkActive="active">
           <a class="nav-link" routerLink="/login">دخول</a>

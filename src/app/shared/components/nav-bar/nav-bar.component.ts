@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth/services/auth.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { AuthService } from 'src/app/auth/services/auth.service';
 })
 export class NavBarComponent implements OnInit {
 
-  constructor(private service:AuthService) { }
+  constructor(private service:AuthService , private router:Router) { }
   user:any = null
   ngOnInit(): void {
     this.service.user.subscribe((res:any) => {
@@ -22,6 +23,7 @@ export class NavBarComponent implements OnInit {
     this.service.login(model).subscribe(res => {
       this.user = null
       this.service.user.next(res)
+      this.router.navigate(['/login'])
       console.log(res)
     })
   }
