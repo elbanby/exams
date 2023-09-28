@@ -52,8 +52,8 @@ export class LoginComponent implements OnInit {
         this.service.user.next(res)
         this.toaster.success("تم تسجيل الدخول بنجاح" , "" , {
         })
+        this.router.navigate(['/subject'])
       })
-      this.router.navigate(['/subject'])
       console.log(model)
     }
   }

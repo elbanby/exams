@@ -16,8 +16,8 @@ export class AuthGuard implements CanActivate {
   ): Observable<boolean | UrlTree> {
     return this.authService.getRole().pipe(
       map((res: any) => {
-        const user = res;
-        if (user.role === 'students' || user.role ==='doctor') {
+        const role = res.role;
+        if (role) {
           return true;
         } else {
           this.router.navigate(['/login'])

@@ -1,6 +1,6 @@
 import { AuthService } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 
@@ -26,7 +26,7 @@ export class RegisterComponent implements OnInit {
       email: ['', [Validators.required , Validators.email]],
       password: ['', [Validators.required]],
       confirmPassword: ['', [Validators.required]],
-    })
+    },{validators:this.checkPassword})
   }
   getStudent() {
     this.service.getUsers('students').subscribe(res => {
@@ -59,18 +59,24 @@ export class RegisterComponent implements OnInit {
       messageClass: "toastr_message",
       timeOut: 5000,
       closeButton: true,
-    })}
-    else {
+    })}else {
     this.service.creatUser(model).subscribe(res => {
       this.toaster.success("تم إنشاء الحساب بنجاح", "", {
       })
     })
     this.service.login(model1).subscribe(res => {
       this.service.user.next(res)
+      this.router.navigate(['/subject'])
     })
 
-    this.router.navigate(['/subject'])
     console.log(model)
     }
+  }
+
+
+  checkPassword:ValidatorFn = (group:AbstractControl):ValidationErrors | null => {
+    let password = group.get("password")?.value
+    let confirmPassword = group.get("confirmPassword")?.value
+    return password === confirmPassword ? null : {notSame : true}
   }
 }

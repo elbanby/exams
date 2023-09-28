@@ -26,7 +26,7 @@ export class ExamComponent implements OnInit {
   validExamboolean: boolean = true
   subjectId: number | string | undefined
   subjectDegree: number = 0
-  allSubjects:any[] = []
+  allSubjects: any[] = []
   constructor(private activateedRouter: ActivatedRoute, private authService: AuthService, private doctorService: DoctorService, private toaster: ToastrService) {
     this.id = this.activateedRouter.snapshot.paramMap.get('id')
   }
@@ -83,13 +83,14 @@ export class ExamComponent implements OnInit {
     })
   }
   upadteStudent() {
-    this.allSubjects.push({name: this.questionSubject.name,degree: this.result,id: this.id,})
+    let allSubjectsPush:{}[] =[]
+    allSubjectsPush.push({name: this.questionSubject.name,degree: this.result,id: this.id,})
     const model = {
       userName: this.userInfo.userName,
       email: this.userInfo.email,
       password: this.userInfo.password,
       id: this.userInfo.id,
-      subject: this.allSubjects,
+      subject: allSubjectsPush,
     }
     this.authService.upadteStudent(model, this.userInfo.id).subscribe(res => {
       this.toaster.success("تم التسجيل")

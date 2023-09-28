@@ -28,8 +28,7 @@
           <mat-form-field appearance="outline">
             <mat-label>تاكيد كلمة المرور</mat-label>
             <input matInput type="password" formControlName="confirmPassword">
-            <mat-error *ngIf="confirmPassword()">passwords not equal</mat-error>
-            <mat-error *ngIf="confirmPassword()">passwords not equal</mat-error>
+            <mat-hint style="color:red;" *ngIf="formRegister.hasError('notSame')">password isnt identical</mat-hint>
           </mat-form-field>
         </div>
       </div>

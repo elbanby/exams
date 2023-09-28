@@ -9,11 +9,12 @@ import { HisStudentComponent } from './doctor/components/his-student/his-student
 import { AuthGuard } from './core/gurds/auth.guard';
 import { AllowdDoctorGuard } from './core/gurds/allowd-doctor.guard';
 import { AllowedStudentsGuard } from './core/gurds/allowed-students.guard';
+import { DontEnerloginGuard } from './core/gurds/dont-enerlogin.guard.guard';
 const routes: Routes = [
-  { path: '', component:SubjectComponent, canActivate:[AuthGuard] },
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'subject', component: SubjectComponent , canActivate:[AuthGuard]},
+  { path: '', component:SubjectComponent , canActivate:[AuthGuard]},
+  { path: 'login', component: LoginComponent , canActivate:[DontEnerloginGuard]},
+  { path: 'register', component: RegisterComponent , canActivate:[DontEnerloginGuard]},
+  { path: 'subject', component: SubjectComponent , canActivate:[AuthGuard] },
   { path: 'newExam', component: NewExamComponent , canActivate:[AllowdDoctorGuard ]},
   { path: 'exam/:id', component: ExamComponent , canActivate:[AuthGuard]},
   { path: 'student', component: HisStudentComponent , canActivate:[AllowdDoctorGuard]},
